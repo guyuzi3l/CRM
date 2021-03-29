@@ -225,11 +225,13 @@ namespace CRM
 
         private bool UpdateClient(ClientModel Client)
         {
+            string LoginUserName = Classes.encryption.Decrypt(Classes.Cookie.GetCookie("username", false));
             Client.First_name = Request.Form["c_first_name"];
             Client.Last_name = Request.Form["c_last_name"];
             Client.Phone_number = Request.Form["c_phone_number"];
             Client.Id = Convert.ToInt32(Request.Form["id"]);
-            Client.Email = Request.Form["c_email_add"];
+            Client.Email = String.IsNullOrEmpty(Request.Form["c_email_add"]) ? null : Classes.encryption.EncryptSecure(Request.Form["c_email_add"], LoginUserName, Client.Id.ToString(), "email");
+            Client.EmailHash = String.IsNullOrEmpty(Request.Form["c_email_add"]) ? null : Classes.encryption.Hash(Request.Form["c_email_add"]);
             Client.Phone_prefix = Request.Form["c_phone_prefix"];
             Client.Country = Request.Form["c_country"];
             Client.Max_deposit = Request.Form["c_max_deposit"];

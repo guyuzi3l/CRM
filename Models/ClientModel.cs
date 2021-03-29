@@ -25,6 +25,7 @@ namespace CRM.Models
 
         public string dob { get; set; }
         public string actual_client_ip { get; set; }
+        public string EmailHash { get; set; }
     }
 
     public class ClientModelSearch

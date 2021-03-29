@@ -61,7 +61,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                         <div class="form-group" id="emailid" hidden>
                                             <label for="c_email_add">Email address</label>
                                             <input type="email" required class="form-control cd-edit-control" name="c_email_add" id="c_email_add" value="<%=Client.Email%>"/>
                                         </div>
@@ -404,7 +404,9 @@
                 $('.cd-edit-display-control').removeClass('hidden');
             });
         });
-
+        $('#c_edit_control_switch').click(function () {
+            $('#emailid').toggle();
+        });
         $('#btnsave').click(function (e){
             if ($('#c_first_name').val() == "" || $('#c_last_name').val() == "" || $('#c_email_add').val() == "" || $('#c_phone_prefix').val() == "" || $('#c_phone_number').val() == ""){
                 toastr.error("Please fill up all fields");

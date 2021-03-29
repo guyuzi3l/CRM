@@ -165,7 +165,7 @@ namespace CRM.Utilities
         {
             if (clients != null)
             {
-                string query = String.Format($"UPDATE clients SET  email = @Email, country = @Country, phone_number = @PhoneNumber, first_name = @FirstName, last_name = @LastName,phone_prefix = @PhonePrefix,max_deposit=@maxDeposit, referral = @reff WHERE  id = @Id");
+                string query = String.Format($"UPDATE clients SET  email = @Email, country = @Country, phone_number = @PhoneNumber, first_name = @FirstName, last_name = @LastName,phone_prefix = @PhonePrefix,max_deposit=@maxDeposit, referral = @reff,email_hash=@EmailHash WHERE  id = @Id");
                 NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Email", clients.Email);
                 cmd.Parameters.AddWithValue("@Country", clients.Country);
@@ -175,6 +175,7 @@ namespace CRM.Utilities
                 cmd.Parameters.AddWithValue("@PhonePrefix", clients.Phone_prefix);
                 cmd.Parameters.AddWithValue("@reff", clients.Referral);
                 cmd.Parameters.AddWithValue("@Id", clients.Id);
+                cmd.Parameters.AddWithValue("@EmailHash", clients.EmailHash);
 
                 double mv = default(double);
 

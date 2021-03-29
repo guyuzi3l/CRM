@@ -96,7 +96,6 @@
                                 <tr class="table-row-header" role="row">
                                     <th>Client ID</th>
                                     <th>NAME</th>
-                                    <th>EMAIL</th>
                                     <th>PHONE NUMBER</th>
                                     <th>Phone Verification</th>
                                     <th>Referral</th>
