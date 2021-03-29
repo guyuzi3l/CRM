@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="CRM.Layout" MasterPageFile="~/Site.Master" %>
+
+<asp:Content ID="Layout" ContentPlaceHolderID="MainContent" runat="server" ClientIDMode="Static">
+
+    <div class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+
+            <!--HTML FOR Header-->
+            <%CRM.Utilities.Templates.getHeader(); %>
+            <!--End FOR Header-->
+
+            <!-- HTML FOR MENU -->
+            <%CRM.Utilities.Menu.CallDashboard();%>
+            <!--END-->
+
+            <div class="content-wrapper">
+                <asp:ContentPlaceHolder ID="LMainContent" runat="server" ClientIDMode="Static"></asp:ContentPlaceHolder>
+            </div>
+
+            <div class="hidden" id="hiddenArea">
+                <asp:ContentPlaceHolder ID="LayoutHiddenArea" runat="server" ClientIDMode="Static"></asp:ContentPlaceHolder>
+            </div>
+
+            <!--HTML FOR Footer-->
+            <%Response.Write(CRM.Utilities.Templates.getFooter()); %>
+            <!--End FOR Footer-->
+        </div>
+    </div>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="PageSpecificHeader" runat="server" ClientIDMode="Static">
+    <asp:ContentPlaceHolder ID="LayoutHeaderDecorator" runat="server" ClientIDMode="Static"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="PageSpecificScript" runat="server" ClientIDMode="Static">
+    <asp:ContentPlaceHolder ID="LayoutScriptDecorator" runat="server" ClientIDMode="Static"></asp:ContentPlaceHolder>
+    <script>
+        <% var t = toastrUtilities.GetToast(); %>
+            <%if (t != null)
+        {%>
+        toastr.<%=t.Value.Key%>('<%=t.Value.Value%>');
+            <%}%>
+</script>
+</asp:Content>

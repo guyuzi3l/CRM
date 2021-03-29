@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="CRM.Site" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>InstBTC CRM </title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link runat="server" rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <link id="Link1" runat="server" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <link id="Link2" runat="server" rel="stylesheet" href="/css/AdminLTE.css"/>
+    <link runat="server" rel="stylesheet" href="/css/styles.css"/>
+    <link runat="server" rel="stylesheet" href="/css/_all-skins.css"/>
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css'>
+    <link rel="stylesheet" href="/script/datepicker/css/bootstrap-datepicker3.min.css" />
+    <link rel="stylesheet" href="/css/extra.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="/css/fullscreenmodal.css">
+    <link rel="stylesheet" href="/css/jquery.floatingscroll.css">
+
+    <script>window.jQuery || document.write('<script src="/script/jquery-1.10.2.min.js"><\/script>')</script>
+
+    <script src="https://www.google.com/uds/api/visualization/1.0/a5a2278ce1a9f0876d1c20cfc1b821dc/format+en,default+en,ui+en,corechart+en.I.js" type="text/javascript"></script>
+    <link href="https://www.google.com/uds/api/visualization/1.0/a5a2278ce1a9f0876d1c20cfc1b821dc/ui+en.css" type="text/css" rel="stylesheet">
+    <script src="https://www.google.com/uds/?file=visualization&amp;v=1&amp;packages=corechart" type="text/javascript"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}"></script>
+   
+
+    <!-- Page specific header-->
+    <asp:ContentPlaceHolder ID="PageSpecificHeader" runat="server" ClientIDMode="Static"></asp:ContentPlaceHolder>
+</head>
+<body id="mainBody">
+    <asp:ContentPlaceHolder ID="MainContent" runat="server" ClientIDMode="Static"></asp:ContentPlaceHolder>
+    <!--Start of Scripts-->
+    <script src="/extra/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="/script/script.js"></script>
+    <script src="/script/bootstrap.min.js"></script>
+    <script src="/extra/dist/js/app.min.js"></script>
+    <script src="/extra/dist/js/demo.js"></script>
+    <script src='https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js'></script>
+    <script type="text/javascript" src="/script/datepicker/js/bootstrap-datepicker.min.js" charset="UTF-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+    <script src="https://d3m29zrp0iqnc8.cloudfront.net/js/components/jquery.introLoader.js"></script>
+    <!--End of Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript" src="/script/fullscreenmodal.js" charset="UTF-8"></script>
+    <!-- Page specific scripts-->
+    <script src="/script/jquery.floatingscroll.min.js"></script>
+    <script src="/script/input-restriction-key.js"></script>
+    <asp:ContentPlaceHolder ID="PageSpecificScript" runat="server" ClientIDMode="Static"></asp:ContentPlaceHolder>
+    <!--End of scripts-->
+</body>
+</html>

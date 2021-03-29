@@ -1,0 +1,11 @@
+﻿body {
+}
+
+.crm-login-logo {
+    height: 40px;
+    width: auto;
+}
+
+.table-no-wrap{
+    white-space: nowrap;
+}
